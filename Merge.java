@@ -1,7 +1,7 @@
 public class Merge{
   /*sort the array from least to greatest value. This is a wrapper function*/
   /*
-    PSEUDOCODE from website: 
+    PSEUDOCODE from website:
       mergesort(data,lo,hi):
         if lo >= hi :
           return
@@ -28,7 +28,8 @@ public class Merge{
   }
 
   public static void main(String[] args){
-
+    int[] data = {2,3,4,1,2,3};
+    System.out.println(findSplit(data)); 
   }
 
 }
