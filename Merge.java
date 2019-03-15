@@ -15,9 +15,17 @@ public class Merge{
 
   private static void mergesort(int[]data, int[]temp, int lo, int hi){
     if (lo >= hi) return;
+    mergesort(data, temp, low, (hi + low) / 2);
+    mergesort(data, temp, low, (hi + low) / 2);
+
     //mergesort()
   }
 
+  public static int[] subArr(int[] data, int start, int end){
+    int[] ary = new int[end-start];
+    return ary;
+  }
+/*
   public static int findSplit(int[] data){
     for (int i = 0; i < data.length; i++){
       if (data[i] > data[i+1]){
@@ -26,10 +34,12 @@ public class Merge{
     }
     return data.length - 1;
   }
-
+*/
   public static void main(String[] args){
+    /*
     int[] data = {2,3,4,1,2,3};
-    System.out.println(findSplit(data)); 
+    System.out.println(findSplit(data));
+    */
   }
 
 }
