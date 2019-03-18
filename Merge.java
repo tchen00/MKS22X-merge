@@ -15,9 +15,8 @@ public class Merge{
 
   private static void mergesort(int[]data, int[]temp, int lo, int hi){
     if (lo >= hi) return;
-    mergesort(data, temp, low, (hi + low) / 2);
-    mergesort(data, temp, (hi + low) / 2, hi);
-
+    mergesort(data, low, (hi + lo) / 2);
+    mergesort(data, (hi + lo) / 2, hi);
     //mergesort()
   }
 
@@ -40,11 +39,31 @@ public class Merge{
     if (right.length > 1) {
       mergeH(right);
     }
-
     merge(data, left, right);
   }
 
 
+  public static void merge(int[] data, int[] first, int[] second) {
+    int i = 0;
+    int j = 0;
+    for (int i = 0; i < data.length; i++) {
+      if (i == first.length) {
+        data[i] = second[j];
+        j++;
+      } else if (j == second.length) {
+        data[i] = first[i];
+        i++;
+      } else {
+        if (first[i] < second[j]) {
+          data[i] = first[i];
+          i++;
+        } else {
+          data[i] = second[j];
+          j++;
+        }
+      }
+    }
+  }
 
   public static int[] subArr(int[] data, int start, int end){
     int[] ary = new int[end-start];
