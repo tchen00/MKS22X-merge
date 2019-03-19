@@ -57,18 +57,49 @@ public class Merge{
     }
     merge(data, left, right);
   }
-*/ 
+*/
 
-  public static void merge(int[] data, int[] first, int[] second) {
+  public static void merge(int[] data, int[] left, int[] rigth) {
+    // variables for left, right and current data index
+    int i = 0;
+    int leftI = 0;
+    int rightI = 0;
 
+    // when looping through both sides
+    while(leftI < left.length && rightI < right.length){
+      // if left is less than or equal to right
+      if (left[leftI] <= right[rightI]){
+        data[i] = left[leftI];
+        leftI++;
+      }
+      else{
+        data[i] = right[rightI];
+        rightI++;
+      }
+      i++;
+    }
+
+    //if left is not done yet
+    while(leftI < left.length){
+      data[i] = left[leftI];
+      i++;
+      leftI++;
+    }
+
+    //if right is not done yet
+    while(rightI < right.length){
+      data[i] = right[rightI];
+      i++;
+      rightI++;
+    }
   }
 
+/*
   public static int[] subArr(int[] data, int start, int end){
     int[] ary = new int[end-start];
     return ary;
   }
-
-/*
+  
   public static int findSplit(int[] data){
     for (int i = 0; i < data.length; i++){
       if (data[i] > data[i+1]){
