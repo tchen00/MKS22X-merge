@@ -15,11 +15,25 @@ public class Merge{
     mergesort(data, lo, hi);
   }
 
-  private static void mergesort(int[]data, int[]temp, int lo, int hi){
-    if (lo >= hi) return;
-    mergesort(data, low, (hi + lo) / 2);
-    mergesort(data, (hi + lo) / 2, hi);
-    //mergesort()
+  private static void mergesort(int[]data, int lo, int hi){
+    if(lo >= hi) return;
+    int mid = data.length / 2;
+    // LEFT ARRAY --------------------------------
+    int[] left = new int[mid];
+    for(int i = 0; i < left.length; i++){
+      // copying left side the new left array
+      left[i] = data[i];
+    }
+    mergesort(left, 0, left.length - 1); // recursive call on left side
+    // RIGHT ARRAY --------------------------------
+    int[] right = new int[data.length - mid];
+    for(int i = 0; i < right.length; i++){
+      // copying right side the new right array 
+      right[i] = data[mid + i];
+    }
+    mergesort(right, 0, right.length - 1); // recursive call on right side
+    // MERGING TWO HALVES
+    merge(data, left, right);
   }
 
   private static void mergeH(int[] data){
