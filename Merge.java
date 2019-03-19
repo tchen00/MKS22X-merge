@@ -28,14 +28,14 @@ public class Merge{
     // RIGHT ARRAY --------------------------------
     int[] right = new int[data.length - mid];
     for(int i = 0; i < right.length; i++){
-      // copying right side the new right array 
+      // copying right side the new right array
       right[i] = data[mid + i];
     }
     mergesort(right, 0, right.length - 1); // recursive call on right side
     // MERGING TWO HALVES
     merge(data, left, right);
   }
-
+/*
   private static void mergeH(int[] data){
     int middle = data.length / 2;
     int[] left = new int[middle];
@@ -57,28 +57,10 @@ public class Merge{
     }
     merge(data, left, right);
   }
-
+*/ 
 
   public static void merge(int[] data, int[] first, int[] second) {
-    int i = 0;
-    int j = 0;
-    for (int i = 0; i < data.length; i++) {
-      if (i == first.length) {
-        data[i] = second[j];
-        j++;
-      } else if (j == second.length) {
-        data[i] = first[i];
-        i++;
-      } else {
-        if (first[i] < second[j]) {
-          data[i] = first[i];
-          i++;
-        } else {
-          data[i] = second[j];
-          j++;
-        }
-      }
-    }
+
   }
 
   public static int[] subArr(int[] data, int start, int end){
