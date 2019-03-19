@@ -9,8 +9,10 @@ public class Merge{
         mergesort right side
         merge
  */
-  public static void mergesort(int[]data){
-    return;
+  public static void mergesort(int[] data){
+    int lo = 0;
+    int hi = data.length - 1;
+    mergesort(data, lo, hi);
   }
 
   private static void mergesort(int[]data, int[]temp, int lo, int hi){
