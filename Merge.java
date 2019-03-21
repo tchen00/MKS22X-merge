@@ -20,6 +20,11 @@ public class Merge{
 
   private static void mergesort(int[]data, int lo, int hi){
     if (lo >= hi) return;
+    if (hi - lo <= 40){
+      insertionsort(data, lo, hi);
+      return;
+    }
+
     int mid = data.length / 2;
     // LEFT ARRAY --------------------------------
     int[] left = new int[mid];
