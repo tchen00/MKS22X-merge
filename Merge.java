@@ -19,7 +19,7 @@ public class Merge{
   }
 
   private static void mergesort(int[]data, int lo, int hi){
-    if(lo >= hi) return;
+    if (lo >= hi) return;
     int mid = data.length / 2;
     // LEFT ARRAY --------------------------------
     int[] left = new int[mid];
@@ -97,6 +97,20 @@ public class Merge{
     }
   }
 
+  public static void insertionsort(int[] data, int lo, int hi){
+    int start = lo + 1;
+    for (int i = start; i <= hi; i++){
+      int temp = data[i];
+      // iteration through the array
+      int output = i;
+      while(output > lo && temp < data[output - 1]){
+        data[output] = data[output - 1];
+        output--;
+      }
+      data[output] = temp;
+    }
+  }
+
 /*
   public static int[] subArr(int[] data, int start, int end){
     int[] ary = new int[end-start];
@@ -113,7 +127,7 @@ public class Merge{
   }
 */
 public static void main(String[]args){
-  //USING MR. K'S sort from last time 
+  //USING MR. K'S sort from last time
   System.out.println("Size\t\tMax Value\tmerge/builtin ratio ");
   int[]MAX_LIST = {1000000000,500,10};
   for(int MAX : MAX_LIST){
